@@ -1,0 +1,20 @@
+for tensorflow.contrib pip intall tensorflow version <=14.0
+
+for pycocotools use the bookmarked linked comment to find the pip install "github reponame here"
+
+if python -V shows nothing use py 
+
+taking the side angle photoes as data
+
+removing the racket being detected as a racket
+
+Steps -
+Modify the library for extracting the 17 points 
+Saving the 17 points in excel format
+writing a batch file to automate the extraction of data from the images data 
+
+Collected dataset of images
+cropping and serializing the data
+applying library to get 17 points and save in excel sheet
+remove noise such as data of racket is to be removed
+apply an algorithm for the generation of model

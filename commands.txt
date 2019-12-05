@@ -1,0 +1,7 @@
+cd Desktop\PROJECT\tf-pose-estimation
+
+python run_webcam.py --model=mobilenet_thin --resize=432x368 --camera=0
+
+python run.py --model=mobilenet_thin --resize=432x368 --image=./images/p1.jpg
+
+python run.py --model=mobilenet_thin --resize=432x368 --image=./images/ansys.jpeg
