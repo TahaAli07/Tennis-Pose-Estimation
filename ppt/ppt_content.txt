@@ -1,0 +1,52 @@
+Working of openPose ?
+
+Cao's OpenPose Model for Multi-person 2D Pose Estimation
+bottom up approach joints --> connected lines --> human
+uses part Affinity Fields to find out which joints belong to which human
+
+Journey -
+
+Component 0
+
+Modifying the OpenPose Library.
+Modifying the code for extracting the 17 data points and save the generated coordinate points in excel format.
+
+Component 1
+
+Image based tennis pose estimation mode.
+Collected dataset of images of forehand shot of several professional tennis players.
+Cropping and serializing the dataset.
+Create a excel data sheet with the coordinates extracted from the images data using OpenPose.
+The above process was automated by writing a bash script .
+Then we found the outliner points and replaced them with mean values of normal data.
+Removed any noisy data points that may have been registered. (sometimes sees the racket as a human)
+Applied centroid algorithm on the excel data sheet and created a model for the pose estimation.
+Now with image input from the user we compare the image with our model and find the percentage similarity between the two using cosine similarity measure. 
+
+Component 2
+
+Video based tennis pose estimation .
+We took a model video input of 5 seconds . This is a video of a professional player taking the forehand shot .
+Divided the video into 50 frames.
+Applied the custom bash script to generate the excel with coordinates data using OpenPose.
+Performed the removal of Outliner points in data.
+User input is taken as a short video clip of the shot .
+This video is broken into equally sliced frames.
+OpenPose is applied to collect the coordinate data in excel format .
+The data points of the user input and the model are compared using the cosine similarity.
+
+We Found - The 17 data points are not of significance here but only the right hand and the leg position data points.As the other data points were found to be similar irrespective of the player having a good or bad form.
+
+Output -
+
+A similarity of >80% was seen with user video of correct form.
+A similarity of 30-50% was seen with user video of bad form.
+
+Extensions -
+
+Take video input input using users phone by making an android app for it.
+Taking a larger dataset.
+Taking more shots of tennis like backhand , drill down etc.
+Take input using IOT Based camera sensor.
+Writing research paper if the project is completed.
+
